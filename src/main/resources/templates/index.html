@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com">
+
+<head>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+</head>
+
+<body>
+
+<div class="container">
+    <div>
+        <a th:href="@{/employee/employee-form}">
+            <button class="btn btn-primary"> ADD Employee</button>
+        </a>
+    </div>
+
+    <table class="table table-bordered table-stripped">
+
+        <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="employee : ${employeeList}">
+            <!--<td th:text="${employee.id}"></td>-->
+            <td th:text="${employee.firstName}"></td>
+            <td th:text="${employee.lastName}"></td>
+            <td th:text="${employee.email}"></td>
+            <td>
+                <a th:href="@{/employee/edit/{id}(id=${employee.id})}">
+                    <button class="btn btn-info">Edit</button>
+                </a>
+                <a th:href="@{/employee/delete/{id}(id=${employee.id})}">
+                    <button class="btn btn-danger">Delete</button>
+                </a>
+            </td>
+        </tr>
+
+        </tbody>
+
+    </table>
+</div>
+
+</body>
+
+</html>
