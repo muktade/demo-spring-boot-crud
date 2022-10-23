@@ -11,7 +11,7 @@ public class Employee implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "employee_id")
+//    @Column(name = "employee_id") //for postgresql it will be committed
     private Long id;
     @Column(name="first_name")
     private String firstName;
