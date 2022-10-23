@@ -14,7 +14,7 @@ import java.util.List;
 
 //@RestController ///for only crud (rest api)
 @Controller   //for using thymeleaf
-@RequestMapping("/employee/")
+@RequestMapping("/api/v1/employee/")
 public class EmployeeController {
 
     @Autowired
@@ -39,7 +39,7 @@ public class EmployeeController {
     public String addUser(@ModelAttribute Employee employee,
                           BindingResult bindingResult){
         if (bindingResult.hasErrors()) {
-            return "employee/add_employee";
+            return "api/v1/employee/add_employee";
         }
 
         employeeService.saveUser(employee);
@@ -49,7 +49,7 @@ public class EmployeeController {
     @GetMapping("delete/{employeeId}")
     public String deleteUser(@PathVariable("employeeId") Long id) {
         employeeService.deleteUser(id);
-        return "redirect:/employee/list";
+        return "redirect:/api/v1/employee/list";
     }
 
     @GetMapping("edit/{employeeId}")

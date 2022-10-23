@@ -10,7 +10,7 @@
 
 <div class="container">
     <div>
-        <a th:href="@{/employee/employee-form}">
+        <a th:href="@{/api/v1/employee/employee-form}">
             <button class="btn btn-primary"> ADD Employee</button>
         </a>
     </div>
@@ -32,10 +32,10 @@
             <td th:text="${employee.lastName}"></td>
             <td th:text="${employee.email}"></td>
             <td>
-                <a th:href="@{/employee/edit/{id}(id=${employee.id})}">
+                <a th:href="@{/api/v1/employee/edit/{id}(id=${employee.id})}">
                     <button class="btn btn-info">Edit</button>
                 </a>
-                <a th:href="@{/employee/delete/{id}(id=${employee.id})}">
+                <a th:href="@{/api/v1/employee/delete/{id}(id=${employee.id})}">
                     <button class="btn btn-danger">Delete</button>
                 </a>
             </td>

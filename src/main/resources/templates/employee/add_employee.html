@@ -9,7 +9,7 @@
 <body>
 <div class="container">
 
-    <form action="#" th:action="@{/employee/save}" th:object="${employee}" method="post">
+    <form action="#" th:action="@{/api/v1/employee/save}" th:object="${employee}" method="post">
         <div class="form-group">
 
             <input class="form-control" type="hidden" th:field="*{id}"/>
