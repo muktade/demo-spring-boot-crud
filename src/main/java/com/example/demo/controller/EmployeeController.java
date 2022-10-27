@@ -25,7 +25,7 @@ public class EmployeeController {
     @GetMapping("list")
     public String getUsers(Model model) {
         List<Employee> employees = employeeService.getUsers();
-        model.addAttribute("employeeList", employees);///this use for controller
+        model.addAttribute("employeeList", employees);  ///this use for controller
         return "index";
     }
 
